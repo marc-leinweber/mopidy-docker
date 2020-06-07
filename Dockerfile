@@ -39,7 +39,7 @@ RUN apt-get update && \
 
 RUN pip3 install \
     Mopidy \
-    Mopidy-Spotify \
+    Mopidy-Spotify
 
 RUN mkdir -p /mopidy
 RUN touch /IS_CONTAINER
