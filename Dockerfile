@@ -34,6 +34,7 @@ RUN apt-get update && \
     libffi-dev \
     libz-dev \
     python3-setuptools \
+    iputils-ping \
     python3-spotify && \
     rm -rf /var/lib/apt/lists/*
 
