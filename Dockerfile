@@ -87,14 +87,16 @@ RUN mkdir -p /etc/apt/keyrings \
 
 RUN python3 -m pip install --upgrade pip
 
-RUN git clone --depth 1 --single-branch -b main https://github.com/mopidy/mopidy-spotify.git mopidy-spotify \
+RUN git clone https://github.com/mopidy/mopidy-spotify.git mopidy-spotify \
     && cd mopidy-spotify \
+    && git checkout v5.0.0a2
     && python3 setup.py install \
     && cd .. \
     && rm -rf mopidy-spotify
     
 # Start helper script.
 COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
 
 # Copy the pulse-client configuratrion
 COPY pulse-client.conf /etc/pulse/client.conf
