@@ -89,7 +89,7 @@ RUN python3 -m pip install --upgrade pip
 
 RUN git clone https://github.com/mopidy/mopidy-spotify.git mopidy-spotify \
     && cd mopidy-spotify \
-    && git checkout v5.0.0a2
+    && git checkout v5.0.0a2 \
     && python3 setup.py install \
     && cd .. \
     && rm -rf mopidy-spotify
